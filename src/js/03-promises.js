@@ -12,8 +12,8 @@ form.addEventListener('submit', e => {
     return Notiflix.Report.warning('Opsss....🧟‍♂️', 'The number must be greater than 0', 'Try again');
   }
 
-  for (let i = 1; i < amount; i++) {
-    createPromise(i, delay + step * i)
+  for (let i = 0; i < amount; i++) {
+    createPromise(i + 1, delay + step * i)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
